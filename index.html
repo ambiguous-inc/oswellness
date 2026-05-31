@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>OS Wellness — Wellness Coaching for Longevity & Vitality</title>
-<meta name="description" content="OS Wellness offers one-on-one wellness coaching, guided movement, and nutrition habit support to help women build vitality, strength, and healthy habits for a long, radiant life." />
+<title>OS Wellness — Wellness &amp; Pilates Coaching for Women</title>
+<meta name="description" content="OS Wellness offers one-on-one wellness coaching, guided movement, and nutrition habit support to help women build strength, confidence, and healthy habits that last." />
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="shortcut icon" href="favicon.ico">
-<meta name="theme-color" content="#46283A">
+<meta name="theme-color" content="#E6398B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
@@ -76,12 +76,13 @@
   .scrollcue .ln{width:1px;height:40px;background:linear-gradient(rgba(191,159,99,.9),transparent)}
   @media(max-width:640px){.hero h1{font-size:3.2rem}.scrollcue{display:none}.hero .lede{max-width:none}}
 
-  /* VALUE BAND (static, luxe) */
-  .values{background:var(--bg-2);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
-  .values .wrap{display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap;padding:26px 36px}
-  .values span{font-family:'Playfair Display';font-style:italic;font-size:1.3rem;color:var(--ink);white-space:nowrap}
-  .values .dia{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex:none}
-  @media(max-width:640px){.values span{font-size:1.05rem}.values .wrap{gap:18px}}
+  /* VALUE BAND (slow marquee) */
+  .values{background:var(--bg-2);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);overflow:hidden;padding:24px 0}
+  .values .track{display:flex;align-items:center;gap:36px;width:max-content;animation:vmarquee 100s linear infinite}
+  .values .track span{font-family:'Playfair Display';font-style:italic;font-size:1.3rem;color:var(--ink);white-space:nowrap}
+  .values .track .dia{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex:none}
+  @keyframes vmarquee{to{transform:translateX(-50%)}}
+  @media(max-width:640px){.values .track span{font-size:1.12rem}.values .track{gap:28px}}
 
   section{padding:124px 0}
   .sec-head{max-width:700px}
@@ -200,15 +201,15 @@
   @media(max-width:480px){.steps{grid-template-columns:1fr}}
 
   /* PHILOSOPHY */
-  .philo{position:relative;text-align:center;color:#FBF3EE;overflow:hidden}
-  .philo .bgimg{position:absolute;inset:0;background:url('philo.jpg') center 38%/cover no-repeat}
-  .philo .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(50,26,38,.62),rgba(50,26,38,.5))}
-  .philo .frame{position:absolute;inset:22px;border:1px solid rgba(224,200,146,.4);z-index:2}
+  .philo{position:relative;text-align:center;color:#3A222A;overflow:hidden}
+  .philo .bgimg{position:absolute;inset:0;background:url('philo.jpg') center 34%/cover no-repeat}
+  .philo .scrim{position:absolute;inset:0;background:radial-gradient(ellipse 72% 72% at 50% 46%,rgba(255,251,246,.84),rgba(255,251,246,.4))}
+  .philo .frame{position:absolute;inset:22px;border:1px solid rgba(191,159,99,.6);z-index:2}
   .philo .wrap{position:relative;z-index:3}
-  .philo .mk{font-family:'Playfair Display';font-size:5rem;line-height:.5;color:var(--gold-li);opacity:.85;height:46px}
-  .philo blockquote{font-family:'Playfair Display';font-style:italic;font-weight:500;font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.32;max-width:900px;margin:0 auto;text-shadow:0 2px 28px rgba(20,10,14,.45)}
-  .philo blockquote b{font-style:normal;font-weight:600;color:var(--gold-li)}
-  .philo .by{margin-top:30px;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:#EBC9BD}
+  .philo .mk{font-family:'Playfair Display';font-size:5rem;line-height:.5;color:var(--gold);opacity:.95;height:46px}
+  .philo blockquote{font-family:'Playfair Display';font-style:italic;font-weight:500;font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.32;max-width:900px;margin:0 auto;color:#3A222A;text-shadow:0 1px 16px rgba(255,251,246,.75)}
+  .philo blockquote b{font-style:normal;font-weight:600;color:var(--rose-dk)}
+  .philo .by{margin-top:30px;font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--soft)}
 
   /* FAQ */
   #faq .wrap{max-width:920px}
@@ -231,28 +232,28 @@
   .contact-card .val{font-size:1.04rem;line-height:1.6;font-weight:300}
   @media(max-width:960px){.contact-grid{grid-template-columns:1fr;gap:40px}}
 
-  /* FOOTER with daisy sky */
-  footer{position:relative;color:#1b2730;padding:100px 0 0;overflow:hidden;background:linear-gradient(180deg,var(--bg) 0%,#86ABBC 13%,var(--sky) 40%,var(--sky) 100%)}
+  /* FOOTER with sunset meadow */
+  footer{position:relative;color:#3A222A;padding:100px 0 0;overflow:hidden;background:linear-gradient(180deg,var(--bg) 0%,#F3B189 12%,#EFA381 38%,#EFA381 100%)}
   footer .wrap{position:relative;z-index:2}
-  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:42px;border-bottom:1px solid rgba(27,39,48,.22)}
-  footer .fb .os{font-family:'Playfair Display';font-size:1.75rem;color:#13202a;letter-spacing:.04em}
-  footer .fb .nm{font-size:.64rem;letter-spacing:.4em;text-transform:uppercase;color:#33505e;margin-top:6px}
-  footer h5{color:#13202a;font-family:'Hanken Grotesk';letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;margin-bottom:18px;font-weight:700}
-  footer .fb p{max-width:36ch;margin-top:18px;color:#27414e;font-weight:300}
-  footer a{display:block;color:#27414e;padding:7px 0;transition:.2s;font-size:.92rem;font-weight:300}
-  footer a:hover{color:#0a141b}
-  .disclaimer{font-size:.74rem;color:#33505e;line-height:1.8;margin-top:34px;font-weight:300}
-  .disclaimer p{margin-bottom:11px}.disclaimer strong{color:#13202a;font-weight:600}
-  .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:28px 0 40px;font-size:.72rem;color:#33505e;letter-spacing:.03em;font-weight:300}
-  .meadow{position:relative;width:100%;height:380px;background:linear-gradient(180deg,var(--sky) 0%,rgba(127,168,188,0) 28%),url('daisy.jpg') center bottom/cover no-repeat}
-  @media(max-width:760px){.foot-top{grid-template-columns:1fr;gap:30px}.meadow{height:240px}}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:42px;border-bottom:1px solid rgba(58,34,42,.28)}
+  footer .fb .os{font-family:'Playfair Display';font-size:1.75rem;color:#2A1820;letter-spacing:.04em}
+  footer .fb .nm{font-size:.64rem;letter-spacing:.4em;text-transform:uppercase;color:#8A4F52;margin-top:6px}
+  footer h5{color:#2A1820;font-family:'Hanken Grotesk';letter-spacing:.22em;text-transform:uppercase;font-size:.66rem;margin-bottom:18px;font-weight:700}
+  footer .fb p{max-width:36ch;margin-top:18px;color:#5C3A40;font-weight:300}
+  footer a{display:block;color:#5C3A40;padding:7px 0;transition:.2s;font-size:.92rem;font-weight:300}
+  footer a:hover{color:#2A1820}
+  .disclaimer{font-size:.74rem;color:#6A464C;line-height:1.8;margin-top:34px;font-weight:300}
+  .disclaimer p{margin-bottom:11px}.disclaimer strong{color:#2A1820;font-weight:600}.disclaimer a{display:inline;color:#2A1820}
+  .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:28px 0 40px;font-size:.72rem;color:#6A464C;letter-spacing:.03em;font-weight:300}
+  .meadow{position:relative;width:100%;height:380px;background:linear-gradient(180deg,#EFA381 0%,rgba(239,163,129,0) 30%),url('footer.jpg') center bottom/cover no-repeat}
+  @media(max-width:760px){.foot-top{grid-template-columns:1fr;gap:30px}.meadow{height:230px}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top"><svg class="emb" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" fill="#46283A"/><circle cx="50" cy="50" r="45.5" fill="none" stroke="#BF9F63" stroke-width="0.8" opacity="0.85"/><g fill="#E0C892"><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(-50 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(50 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(-25 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(25 50 60)"/></g><circle cx="50" cy="58" r="4.2" fill="#BE7669"/><path d="M50 60 V74" stroke="#BF9F63" stroke-width="1.6" stroke-linecap="round"/><path d="M50 67 C 45 66, 42 62, 41 59 M50 67 C 55 66, 58 62, 59 59" stroke="#BF9F63" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg><span class="os">OS</span><span class="div"></span><span class="nm">Wellness</span></a>
+    <a class="brand" href="#top"><svg class="emb" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" fill="#E6398B"/><circle cx="50" cy="50" r="45.5" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.85"/><g fill="#FFFFFF"><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(-50 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(50 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(-25 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(25 50 60)"/></g><circle cx="50" cy="58" r="4.4" fill="#F4D98A"/><path d="M50 60 V74" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/><path d="M50 67 C 45 66, 42 62, 41 59 M50 67 C 55 66, 58 62, 59 59" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg><span class="os">OS</span><span class="div"></span><span class="nm">Wellness</span></a>
     <nav class="navlinks">
       <a href="#about">About</a><a href="#approach">Approach</a><a href="#programs">Programs</a><a href="#how">Journey</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
       <a class="btn btn-primary" href="#programs">Get Started</a>
@@ -269,9 +270,9 @@
   <div class="scrim"></div>
   <div class="frame"></div>
   <div class="wrap">
-    <div class="eyebrow">Wellness Coaching · Longevity</div>
+    <div class="eyebrow">Wellness Coaching · Pilates</div>
     <h1>Wellness for a<br><em>radiant life.</em></h1>
-    <p class="lede">One-on-one wellness coaching, guided movement, and nutrition habit support — a considered partnership for women building strength, vitality, and habits made to last a lifetime.</p>
+    <p class="lede">One-on-one wellness coaching, guided movement, and nutrition habit support — a considered partnership for women building strength, confidence, and habits made to last a lifetime.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#programs">Explore Programs</a>
       <a class="link-arrow" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Book a complimentary consult <span>→</span></a>
@@ -282,8 +283,9 @@
 
 <!-- VALUE BAND -->
 <div class="values">
-  <div class="wrap">
-    <span>Vitality</span><i class="dia"></i><span>Longevity</span><i class="dia"></i><span>Radiance</span><i class="dia"></i><span>Strength</span><i class="dia"></i><span>Balance</span>
+  <div class="track">
+    <span>Strength</span><i class="dia"></i><span>Balance</span><i class="dia"></i><span>Radiance</span><i class="dia"></i><span>Movement</span><i class="dia"></i><span>Wellbeing</span><i class="dia"></i>
+    <span>Strength</span><i class="dia"></i><span>Balance</span><i class="dia"></i><span>Radiance</span><i class="dia"></i><span>Movement</span><i class="dia"></i><span>Wellbeing</span><i class="dia"></i>
   </div>
 </div>
 
@@ -298,7 +300,7 @@
     <div class="about-body">
       <div class="eyebrow">Meet Your Coach</div>
       <h2>Coaching for the<br>long, radiant life ahead.</h2>
-      <p>I'm Christina Lewis — a NASM Certified Wellness Coach and BASI-certified Pilates instructor who has spent more than fifteen years helping women build healthier, happier habits and feel vital at every age.</p>
+      <p>I'm Christina Lewis — a NASM Certified Wellness Coach and BASI-certified Pilates instructor who has spent more than fifteen years helping women build healthier, happier habits and feel their best at every age.</p>
       <p>My work is about <em>partnership, not perfection.</em> Together we set realistic goals, find a movement and nutrition rhythm that fits your real life, and create the steady accountability that turns good intentions into routines that carry you, beautifully, for years to come.</p>
       <div class="sig">Christina</div>
       <div class="sig-sub">Founder · NASM-CWC · BASI Pilates</div>
@@ -317,7 +319,7 @@
     <div class="sec-head">
       <div class="eyebrow">The Approach</div>
       <h2>Four pillars, woven into<br>one cohesive rhythm.</h2>
-      <p class="sub">Everything is designed around one goal — building healthy habits that keep you strong, steady, and vital for the long run.</p>
+      <p class="sub">Everything is designed around one goal — building healthy habits that keep you strong, steady, and energized for the long run.</p>
     </div>
     <div class="appr-grid">
       <div class="appr"><span class="no">01</span>
@@ -328,7 +330,7 @@
         <h3>Guided Movement &amp; Pilates</h3><p>BASI-method Pilates and gentle, guided movement to build a consistent habit and help you feel stronger in your body.</p></div>
       <div class="appr"><span class="no">03</span>
         <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="#BE7669" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15 H27"/><path d="M6 15 C 8 27, 24 27, 26 15"/><path d="M16 14 C 12 10, 13 5, 16 3 C 19 5, 20 10, 16 14 Z"/></svg>
-        <h3>Nutrition Habit Support</h3><p>Educational guidance and simple protein &amp; fiber tracking to build balanced eating habits — supportive coaching, never meal plans or medical advice.</p></div>
+        <h3>Nutrition Habit Support</h3><p>Educational guidance and simple protein &amp; fiber tracking to help you build balanced, confident eating habits.</p></div>
       <div class="appr"><span class="no">04</span>
         <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="#BE7669" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12"/><path d="M10 16 l4 4 l8 -9"/></svg>
         <h3>Accountability Check-ins</h3><p>Regular check-ins, habit reviews, and encouragement so your momentum keeps building between sessions.</p></div>
@@ -351,7 +353,7 @@
 <!-- DIPTYCH -->
 <div class="diptych">
   <div class="dip"><img src="weights.jpg" alt="Movement and strength"><div class="lbl"><div class="e">Move</div><h4>Strength &amp; Movement</h4></div></div>
-  <div class="dip"><img src="nutrition.jpg" alt="Nourishment and vitality"><div class="lbl"><div class="e">Nourish</div><h4>Vitality &amp; Nutrition</h4></div></div>
+  <div class="dip"><img src="nutrition.jpg" alt="Nourishment and nutrition"><div class="lbl"><div class="e">Nourish</div><h4>Balanced Nutrition</h4></div></div>
 </div>
 
 <!-- PROGRAMS -->
@@ -415,7 +417,7 @@
   <div class="frame"></div>
   <div class="wrap">
     <div class="mk">&ldquo;</div>
-    <blockquote>Longevity isn't about adding years — it's about filling them with <b>vitality</b>, strength, and ease.</blockquote>
+    <blockquote>True wellness is feeling <b>strong</b>, steady, and entirely yourself — at every age.</blockquote>
     <div class="by">Christina Lewis · Founder</div>
   </div>
 </section>
@@ -456,8 +458,8 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="fb">
-        <div class="os">OS Wellness</div><div class="nm">Organic Shimmer</div>
-        <p>One-on-one wellness coaching, guided movement, and nutrition habit support for women building vitality and healthy habits that last a lifetime.</p>
+        <div class="os">OS Wellness</div><div class="nm">Wellness Coaching</div>
+        <p>One-on-one wellness coaching, guided movement, and nutrition habit support for women building strength and healthy habits that last a lifetime.</p>
         <p style="margin-top:16px;color:#33505e;font-size:.82rem">hello@oswellness.app<br>1325 Howard Ave, STE 439 · Burlingame, CA 94010</p>
       </div>
       <div><h5>Explore</h5><a href="#about">About</a><a href="#approach">Approach</a><a href="#programs">Programs</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
@@ -466,9 +468,9 @@
     <div class="disclaimer">
       <p><strong>Wellness Coaching Disclaimer.</strong> OS Wellness provides general wellness coaching, Pilates-based movement, and educational nutrition habit support for healthy adults. We are not licensed medical providers, physicians, registered dietitians, psychologists, or physical therapists. Our services do not diagnose, treat, cure, or prevent any disease or condition, do not constitute therapy or medical nutrition therapy, and are not a substitute for professional medical advice, diagnosis, or treatment. Always consult your physician or qualified healthcare provider before beginning any exercise, movement, or nutrition program, and stop any activity that causes pain or discomfort.</p>
       <p><strong>No Medical Products or Goods.</strong> OS Wellness sells only educational coaching and movement <strong>services</strong>. We do not sell, distribute, manufacture, compound, prescribe, dispense, administer, ship, or provide any products of any kind — including pharmaceuticals, prescription or over-the-counter drugs, supplements, vitamins, hormones, peptides, injectables, medical devices, or any controlled or regulated substance. No purchase on this site includes any such product, and any reference to nutrition is strictly educational.</p>
-      <p><strong>Results Disclaimer.</strong> Individual results vary and are not guaranteed. Any outcomes depend on personal effort, consistency, health status, and other factors outside our control. &nbsp; <strong>Assumption of Risk &amp; Release.</strong> Physical activity carries inherent risks; by participating, clients voluntarily assume those risks, confirm they are medically cleared to exercise, and release OS Wellness and Organic Shimmer from liability to the fullest extent permitted by law. &nbsp; <strong>Limitation of Liability.</strong> To the maximum extent permitted by law, OS Wellness's total liability arising from the services is limited to the amount you paid for the applicable program. &nbsp; <strong>Payments.</strong> Payments are processed securely by Stripe, Inc. OS Wellness does not store or have access to your full payment card details. Full <a href="terms.html" style="color:#13202a;text-decoration:underline">Terms</a>, <a href="privacy.html" style="color:#13202a;text-decoration:underline">Privacy Policy</a>, and <a href="refund-policy.html" style="color:#13202a;text-decoration:underline">Refund Policy</a> apply.</p>
+      <p><strong>Results Disclaimer.</strong> Individual results vary and are not guaranteed. Any outcomes depend on personal effort, consistency, health status, and other factors outside our control. &nbsp; <strong>Assumption of Risk &amp; Release.</strong> Physical activity carries inherent risks; by participating, clients voluntarily assume those risks, confirm they are medically cleared to exercise, and release OS Wellness from liability to the fullest extent permitted by law. &nbsp; <strong>Limitation of Liability.</strong> To the maximum extent permitted by law, OS Wellness's total liability arising from the services is limited to the amount you paid for the applicable program. &nbsp; <strong>Payments.</strong> Payments are processed securely by Stripe, Inc. OS Wellness does not store or have access to your full payment card details. Full <a href="terms.html" style="color:#13202a;text-decoration:underline">Terms</a>, <a href="privacy.html" style="color:#13202a;text-decoration:underline">Privacy Policy</a>, and <a href="refund-policy.html" style="color:#13202a;text-decoration:underline">Refund Policy</a> apply.</p>
     </div>
-    <div class="foot-bottom"><div>© <span id="yr"></span> OS Wellness · Organic Shimmer Tanning + Wellness. All rights reserved.</div><div>Secured by Stripe · VISA · Mastercard · AMEX · Discover</div></div>
+    <div class="foot-bottom"><div>© <span id="yr"></span> OS Wellness. All rights reserved.</div><div>Secured by Stripe · VISA · Mastercard · AMEX · Discover</div></div>
   </div>
   <div class="meadow"></div>
 </footer>
