@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OS Wellness — Wellness Coaching for Longevity & Vitality</title>
+<meta name="description" content="OS Wellness offers one-on-one wellness coaching, guided movement, and nutrition habit support to help women build vitality, strength, and healthy habits for a long, radiant life." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5EFE6; --bg-2:#FCF8F2; --card:#FDFAF4;
+    --ink:#241D1A; --soft:#6B5F58; --faint:#9F9189;
+    --clay:#B16A52; --clay-dk:#9A5640; --rose:#C98E7C; --blush:#EBD6CA;
+    --dark:#241D1A; --dark-2:#322826;
+    --gold:#B68F57; --gold-li:#D9BE8B;
+    --sky:#6B8E9B; --sky-li:#9DBBC7;
+    --line:rgba(36,29,26,.13); --line-2:rgba(36,29,26,.055);
+    --shadow:0 34px 80px -38px rgba(36,29,26,.5);
+    --shadow-sm:0 16px 40px -22px rgba(36,29,26,.45);
+    --max:1240px; --pad:34px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;font-size:16.5px;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.03;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  h1,h2,h3,h4{font-family:'Bodoni Moda',Didot,Georgia,serif;font-optical-sizing:auto;font-weight:500;line-height:1.06;letter-spacing:-.005em;color:var(--ink)}
+  em,.ital{font-style:italic;font-weight:400}
+  .accent{color:var(--clay)}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-weight:500;letter-spacing:.34em;text-transform:uppercase;font-size:.68rem;color:var(--clay);display:inline-flex;align-items:center;gap:13px}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
+  .btn{display:inline-flex;align-items:center;gap:11px;font-family:'Jost';font-weight:500;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;padding:17px 34px;border:1px solid transparent;cursor:pointer;transition:.35s cubic-bezier(.2,.7,.3,1)}
+  .btn-primary{background:var(--clay-dk);color:var(--bg)}
+  .btn-primary:hover{background:var(--ink);transform:translateY(-2px)}
+  .btn-cream{background:var(--bg);color:var(--clay-dk)}
+  .btn-cream:hover{background:#fff;transform:translateY(-2px)}
+  .btn-line{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-line:hover{border-color:var(--ink)}
+  .btn-light{background:transparent;color:#FBF6EE;border-color:rgba(255,255,255,.6)}
+  .btn-light:hover{background:rgba(255,255,255,.12);border-color:#fff}
+  .link-arrow{display:inline-flex;align-items:center;gap:10px;font-family:'Jost';font-weight:500;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--clay);padding-bottom:4px;transition:.3s}
+  .link-arrow:hover{gap:16px;color:var(--clay)}
+  .link-arrow.lt{color:#FBF6EE;border-color:rgba(255,255,255,.7)}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(245,239,230,.72);border-bottom:1px solid var(--line-2)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:82px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .os{font-family:'Bodoni Moda';font-size:1.75rem;font-weight:600;letter-spacing:.04em}
+  .brand .div{width:1px;height:24px;background:var(--line)}
+  .brand .nm{font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;color:var(--soft);font-weight:500}
+  .navlinks{display:flex;gap:36px;align-items:center}
+  .navlinks a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:500;transition:.2s}
+  .navlinks a:hover{color:var(--clay)}
+  .navlinks a.btn-primary{padding:13px 26px;color:var(--bg)}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink)}
+  @media(max-width:960px){.navlinks{display:none}.menu-toggle{display:block}}
+
+  /* HERO */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#FBF6EE;overflow:hidden}
+  .hero .bgimg{position:absolute;inset:0;background:url('hero.jpg') center 38%/cover no-repeat;transform:scale(1.04);animation:slowzoom 18s ease-out forwards}
+  @keyframes slowzoom{to{transform:scale(1)}}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(2deg,rgba(32,20,22,.66) 0%,rgba(32,20,22,.28) 34%,rgba(32,20,22,.05) 56%,transparent 75%),linear-gradient(102deg,rgba(28,16,18,.5) 0%,rgba(28,16,18,.22) 32%,transparent 52%)}
+  .hero .frame{position:absolute;inset:20px;border:1px solid rgba(255,255,255,.4);pointer-events:none;z-index:4}
+  .hero .wrap{position:relative;z-index:3;width:100%;padding-top:120px;padding-bottom:84px}
+  .hero .eyebrow{color:#FCEAD9;text-shadow:0 1px 18px rgba(40,20,22,.6);letter-spacing:.36em}
+  .hero .eyebrow::before{background:#FCEAD9;box-shadow:0 0 10px rgba(40,20,22,.4)}
+  .hero h1{color:#fff;font-size:clamp(3.6rem,8.4vw,7.4rem);font-weight:500;margin-top:24px;max-width:14ch;text-shadow:0 2px 40px rgba(30,18,20,.4)}
+  .hero h1 em{display:block;color:#F4DFD0}
+  .hero .lede{font-size:1.12rem;color:rgba(255,255,255,.9);margin-top:26px;max-width:46ch;font-weight:300;line-height:1.8}
+  .hero-cta{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:38px}
+  .scrollcue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.75);display:flex;flex-direction:column;align-items:center;gap:9px}
+  .scrollcue .ln{width:1px;height:38px;background:linear-gradient(rgba(255,255,255,.7),transparent);animation:drop 2.2s ease-in-out infinite}
+  @keyframes drop{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+  @media(max-width:640px){.hero h1{font-size:3.5rem}.scrollcue{display:none}}
+
+  /* MARQUEE */
+  .band{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;border-top:1px solid var(--gold)}
+  .band .track{display:inline-block;padding:18px 0;animation:scroll 30s linear infinite;font-family:'Bodoni Moda';font-style:italic;font-size:1.35rem;letter-spacing:.02em}
+  .band .track span{margin:0 34px;opacity:.94}
+  .band .track .d{color:var(--gold-li);font-style:normal;font-size:.8rem;vertical-align:middle}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section{padding:120px 0}
+  .sec-head{max-width:700px}
+  .sec-head h2{font-size:clamp(2.4rem,5.2vw,4rem);margin:18px 0 0;font-weight:500}
+  .sec-head .sub{color:var(--soft);font-size:1.1rem;margin-top:18px;font-weight:300}
+
+  /* ABOUT */
+  #about{background:var(--bg-2)}
+  .about-grid{display:grid;grid-template-columns:.74fr 1.26fr;gap:70px;align-items:center}
+  .portrait{position:relative;width:min(270px,82%);margin:0 auto}
+  .portrait .frame2{width:100%;aspect-ratio:3/3.8;border-radius:9999px 9999px 4px 4px;overflow:hidden;box-shadow:var(--shadow);position:relative;z-index:2}
+  .portrait .frame2 img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+  .portrait .gline{position:absolute;inset:0;border:1px solid var(--gold);border-radius:9999px 9999px 4px 4px;transform:translate(18px,18px);z-index:1;opacity:.55}
+  .portrait .cap{margin-top:22px;text-align:center}
+  .portrait .cap .nm{font-family:'Bodoni Moda';font-style:italic;font-size:1.45rem;color:var(--clay)}
+  .portrait .cap .ro{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);margin-top:5px}
+  .about-body h2{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+  .about-body p{color:var(--soft);margin-top:20px;font-size:1.08rem;font-weight:300;line-height:1.85}
+  .about-body p em{color:var(--ink);font-weight:400}
+  .creds{display:flex;gap:34px;flex-wrap:wrap;margin-top:34px;padding-top:30px;border-top:1px solid var(--line)}
+  .creds div .k{font-family:'Bodoni Moda';font-size:1.15rem;color:var(--ink)}
+  .creds div .l{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:3px}
+  @media(max-width:960px){.about-grid{grid-template-columns:1fr;gap:50px}.portrait{order:-1}}
+
+  /* APPROACH */
+  .appr-grid{display:grid;grid-template-columns:repeat(2,1fr);margin-top:60px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .appr{padding:48px 46px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.35s;position:relative}
+  .appr:hover{background:var(--bg-2)}
+  .appr .no{font-family:'Bodoni Moda';font-style:italic;font-size:1rem;color:var(--clay);position:absolute;top:48px;right:46px}
+  .appr .ic{width:48px;height:48px;margin-bottom:24px}
+  .appr h3{font-size:1.85rem;font-weight:500}
+  .appr p{color:var(--soft);margin-top:12px;font-size:1.02rem;font-weight:300}
+  @media(max-width:720px){.appr-grid{grid-template-columns:1fr}.appr{padding:38px 28px}}
+  .scope{margin-top:46px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--clay);padding:26px 30px;font-size:.96rem;color:var(--soft);font-weight:300}
+  .scope b{color:var(--ink);font-weight:500;font-family:'Jost'}
+
+  /* RITUAL BAND */
+  .ritual{position:relative;min-height:54vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#FBF6EE;overflow:hidden}
+  .ritual .bgimg{position:absolute;inset:0;background:url('ritual.jpg') center 42%/cover no-repeat}
+  .ritual .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(36,24,20,.5),rgba(36,24,20,.2) 50%,rgba(36,24,20,.5))}
+  .ritual .frame{position:absolute;inset:20px;border:1px solid rgba(255,255,255,.38);z-index:2}
+  .ritual .inner{position:relative;z-index:3;max-width:760px;padding:40px}
+  .ritual .eyebrow{color:#F1D9C9;justify-content:center}
+  .ritual .eyebrow::before{background:var(--gold-li)}
+  .ritual blockquote{font-family:'Bodoni Moda';font-style:italic;font-weight:400;font-size:clamp(1.7rem,4vw,2.8rem);line-height:1.3;margin-top:22px;text-shadow:0 2px 30px rgba(20,12,14,.4)}
+
+  /* PROGRAMS */
+  #programs{background:var(--bg-2)}
+  .toggle{display:inline-flex;background:var(--card);border:1px solid var(--line);padding:5px;margin-top:16px}
+  .toggle button{font-family:'Jost';font-weight:500;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;border:none;background:none;cursor:pointer;padding:11px 24px;color:var(--soft);transition:.2s}
+  .toggle button.on{background:var(--clay-dk);color:var(--bg)}
+  .plans{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:46px;align-items:stretch}
+  .plan{background:var(--card);border:1px solid var(--line);padding:48px 42px;display:flex;flex-direction:column;position:relative}
+  .plan.feat{background:var(--dark);border-color:var(--dark);color:var(--blush)}
+  .plan.feat h3{color:#fff}.plan.feat .price .amt{color:var(--gold-li)}
+  .plan.feat .sub,.plan.feat .term-note{color:#b9a79f}
+  .plan.feat .feat-list li{border-color:rgba(255,255,255,.12);color:#e9dbd3}
+  .plan.feat .feat-list li::before{border-color:var(--gold-li)}
+  .plan .tag{position:absolute;top:44px;right:42px;font-size:.62rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-li)}
+  .plan h3{font-size:2.3rem;font-weight:500}
+  .plan .sub{color:var(--faint);font-size:.84rem;letter-spacing:.04em;margin-top:6px}
+  .price{display:flex;align-items:baseline;gap:9px;margin:30px 0 2px}
+  .price .amt{font-family:'Bodoni Moda';font-size:4rem;font-weight:500;line-height:1;color:var(--clay)}
+  .price .per{color:var(--faint);font-size:.84rem;letter-spacing:.04em}
+  .term-note{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:26px}
+  .feat-list{list-style:none;margin:8px 0 32px;flex:1}
+  .feat-list li{display:flex;gap:14px;align-items:flex-start;padding:13px 0;font-size:.95rem;font-weight:300;border-bottom:1px solid var(--line-2)}
+  .feat-list li::before{content:"";flex:none;width:6px;height:6px;border:1px solid var(--clay);transform:rotate(45deg);margin-top:8px}
+  .plan .btn{width:100%;justify-content:center}
+  .plan.feat .btn-primary{background:var(--bg);color:var(--dark)}
+  .plan.feat .btn-primary:hover{background:var(--gold-li)}
+  .pay-note{text-align:center;margin-top:18px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+  .plan.feat .pay-note{color:#b9a79f}
+  @media(max-width:720px){.plans{grid-template-columns:1fr}}
+
+  /* ENHANCEMENTS */
+  .addon-head{display:flex;align-items:center;gap:26px;margin:92px 0 14px}
+  .addon-head .ln{flex:1;height:1px;background:var(--line)}
+  .addon-head h3{font-size:2.2rem;font-style:italic;font-weight:400;white-space:nowrap}
+  .addon-note{text-align:center;color:var(--soft);max-width:58ch;margin:0 auto 40px;font-size:1rem;font-weight:300}
+  .addons{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .addon{padding:32px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:.3s;background:var(--card)}
+  .addon:hover{background:var(--bg-2)}
+  .addon .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .addon h4{font-size:1.5rem;font-weight:500}
+  .addon .ap{font-family:'Bodoni Moda';font-size:1.55rem;font-weight:500;color:var(--clay);white-space:nowrap}
+  .addon p{font-size:.86rem;color:var(--soft);margin-top:8px;font-weight:300}
+  .addon .unit{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:16px}
+  @media(max-width:880px){.addons{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.addons{grid-template-columns:1fr}}
+
+  /* JOURNEY */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:60px;border-left:1px solid var(--line)}
+  .step{padding:0 32px;border-right:1px solid var(--line)}
+  .step .n{font-family:'Bodoni Moda';font-style:italic;font-size:3rem;color:var(--clay);line-height:1}
+  .step h4{font-size:1.5rem;margin:16px 0 10px;font-weight:500}
+  .step p{color:var(--soft);font-size:.94rem;font-weight:300}
+  @media(max-width:880px){.steps{grid-template-columns:repeat(2,1fr);gap:40px 0;border:0}.step{border-right:0;padding:0 26px 0 0}}
+  @media(max-width:480px){.steps{grid-template-columns:1fr}}
+
+  /* PHILOSOPHY */
+  .philo{background:var(--dark);color:var(--blush);text-align:center}
+  .philo .mk{font-family:'Bodoni Moda';font-size:5.5rem;line-height:.5;color:var(--gold);opacity:.55;height:46px}
+  .philo blockquote{font-family:'Bodoni Moda';font-style:italic;font-weight:400;font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.3;max-width:880px;margin:0 auto}
+  .philo blockquote b{font-style:normal;font-weight:500;color:var(--gold-li)}
+  .philo .by{margin-top:30px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--rose)}
+
+  /* FAQ */
+  #faq .wrap{max-width:920px}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:30px 0;display:flex;justify-content:space-between;gap:26px;align-items:center;font-family:'Bodoni Moda';font-size:1.55rem;font-weight:500;color:var(--ink)}
+  .faq-q .pl{position:relative;width:18px;height:18px;flex:none}
+  .faq-q .pl::before,.faq-q .pl::after{content:"";position:absolute;background:var(--clay);transition:.3s;top:50%;left:50%;transform:translate(-50%,-50%)}
+  .faq-q .pl::before{width:16px;height:1.5px}.faq-q .pl::after{width:1.5px;height:16px}
+  .faq-q.open .pl::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+  .faq-a div{padding:0 0 30px;max-width:84ch;font-size:1.02rem;color:var(--soft);font-weight:300}
+
+  /* CONTACT */
+  #contact{background:var(--bg-2)}
+  .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .contact-card{background:var(--card);border:1px solid var(--line);padding:10px 40px}
+  .contact-card .row{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid var(--line-2);align-items:flex-start}
+  .contact-card .row:last-child{border:none}
+  .contact-card .lbl{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--clay);font-weight:500;min-width:80px;padding-top:5px}
+  .contact-card .val{font-size:1.04rem;line-height:1.6;font-weight:300}
+  @media(max-width:960px){.contact-grid{grid-template-columns:1fr;gap:40px}}
+
+  /* FOOTER with daisy sky */
+  footer{position:relative;color:#1b2730;padding:96px 0 0;overflow:hidden;
+    background:linear-gradient(180deg,var(--bg) 0%,#86ABBC 13%,var(--sky) 40%,var(--sky) 100%)}
+  footer .wrap{position:relative;z-index:2}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:42px;border-bottom:1px solid rgba(27,39,48,.22)}
+  footer .fb .os{font-family:'Bodoni Moda';font-size:1.7rem;color:#13202a;letter-spacing:.03em}
+  footer .fb .nm{font-size:.66rem;letter-spacing:.36em;text-transform:uppercase;color:#33505e;margin-top:5px}
+  footer h5{color:#13202a;font-family:'Jost';letter-spacing:.22em;text-transform:uppercase;font-size:.68rem;margin-bottom:18px;font-weight:600}
+  footer .fb p{max-width:36ch;margin-top:18px;color:#27414e;font-weight:300}
+  footer a{display:block;color:#27414e;padding:7px 0;transition:.2s;font-size:.92rem;font-weight:300}
+  footer a:hover{color:#0a141b}
+  .disclaimer{font-size:.74rem;color:#33505e;line-height:1.8;margin-top:34px;font-weight:300}
+  .disclaimer p{margin-bottom:11px}
+  .disclaimer strong{color:#13202a;font-weight:500}
+  .foot-bottom{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:28px 0 40px;font-size:.74rem;color:#33505e;letter-spacing:.03em;font-weight:300}
+  .meadow{position:relative;width:100%;height:380px;
+    background:linear-gradient(180deg,var(--sky) 0%,rgba(107,142,155,0) 28%),url('daisy.jpg') center bottom/cover no-repeat}
+  @media(max-width:760px){.foot-top{grid-template-columns:1fr;gap:30px}.meadow{height:240px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="os">OS</span><span class="div"></span><span class="nm">Wellness</span></a>
+    <nav class="navlinks">
+      <a href="#about">About</a>
+      <a href="#approach">Approach</a>
+      <a href="#programs">Programs</a>
+      <a href="#how">Journey</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="#programs">Get Started</a>
+    </nav>
+    <button class="menu-toggle" onclick="var n=document.querySelector('.navlinks');var o=n.style.display==='flex';n.style.cssText=o?'':'display:flex;position:absolute;top:82px;right:20px;flex-direction:column;background:var(--card);padding:22px 28px;box-shadow:var(--shadow);gap:18px;align-items:flex-start';">☰</button>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="bgimg"></div>
+  <div class="scrim"></div>
+  <div class="frame"></div>
+  <div class="wrap">
+    <div class="eyebrow">Wellness Coaching · Longevity</div>
+    <h1>Wellness for a<br><em>radiant life.</em></h1>
+    <p class="lede">One-on-one wellness coaching, guided movement, and nutrition habit support — a considered partnership for women building strength, vitality, and habits made to last a lifetime.</p>
+    <div class="hero-cta">
+      <a class="btn btn-cream" href="#programs">Explore Programs</a>
+      <a class="link-arrow lt" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Book a complimentary consult <span>→</span></a>
+    </div>
+  </div>
+  <div class="scrollcue">Scroll<div class="ln"></div></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="band">
+  <div class="track">
+    <span>Vitality</span><span class="d">✦</span><span>Longevity</span><span class="d">✦</span><span>Radiance</span><span class="d">✦</span><span>Strength</span><span class="d">✦</span><span>Balance</span><span class="d">✦</span>
+    <span>Vitality</span><span class="d">✦</span><span>Longevity</span><span class="d">✦</span><span>Radiance</span><span class="d">✦</span><span>Strength</span><span class="d">✦</span><span>Balance</span><span class="d">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="portrait">
+      <div class="gline"></div>
+      <div class="frame2"><img src="coach.jpg" alt="Christina Lewis, NASM Certified Wellness Coach"></div>
+      <div class="cap"><div class="nm">Christina Lewis</div><div class="ro">Founder &amp; Coach</div></div>
+    </div>
+    <div class="about-body">
+      <div class="eyebrow">Meet Your Coach</div>
+      <h2>Coaching for the<br>long, radiant life ahead.</h2>
+      <p>I'm Christina Lewis — a NASM Certified Wellness Coach and BASI-certified Pilates instructor who has spent more than fifteen years helping women build healthier, happier habits and feel vital at every age.</p>
+      <p>My work is about <em>partnership, not perfection.</em> Together we set realistic goals, find a movement and nutrition rhythm that fits your real life, and create the steady accountability that turns good intentions into routines that carry you, beautifully, for years to come.</p>
+      <div class="creds">
+        <div><div class="k">NASM-CWC</div><div class="l">Wellness Coach</div></div>
+        <div><div class="k">BASI</div><div class="l">Pilates Certified</div></div>
+        <div><div class="k">Longevity</div><div class="l">Habit Specialist</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The Approach</div>
+      <h2>Four pillars, woven into<br>one cohesive rhythm.</h2>
+      <p class="sub">Everything is designed around one goal — building healthy habits that keep you strong, steady, and vital for the long run.</p>
+    </div>
+    <div class="appr-grid">
+      <div class="appr">
+        <span class="no">01</span>
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="#B16A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 24 C 10 16, 12 5, 16 4 C 20 5, 22 16, 16 24 Z"/><path d="M16 24 C 10 16, 12 5, 16 4 C 20 5, 22 16, 16 24 Z" transform="rotate(-42 16 24)"/><path d="M16 24 C 10 16, 12 5, 16 4 C 20 5, 22 16, 16 24 Z" transform="rotate(42 16 24)"/></svg>
+        <h3>Wellness Coaching</h3>
+        <p>NASM-certified coaching focused on goals, motivation, and behavior change — partnering with you to build routines that last.</p>
+      </div>
+      <div class="appr">
+        <span class="no">02</span>
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="#B16A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 28 V16 A9 9 0 0 1 25 16 V28"/><path d="M3 28 H29"/></svg>
+        <h3>Guided Movement &amp; Pilates</h3>
+        <p>BASI-method Pilates and gentle, guided movement to build a consistent habit and help you feel stronger in your body.</p>
+      </div>
+      <div class="appr">
+        <span class="no">03</span>
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="#B16A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15 H27"/><path d="M6 15 C 8 27, 24 27, 26 15"/><path d="M16 14 C 12 10, 13 5, 16 3 C 19 5, 20 10, 16 14 Z"/></svg>
+        <h3>Nutrition Habit Support</h3>
+        <p>Educational guidance and simple protein &amp; fiber tracking to build balanced eating habits — supportive coaching, never meal plans or medical advice.</p>
+      </div>
+      <div class="appr">
+        <span class="no">04</span>
+        <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="#B16A52" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12"/><path d="M10 16 l4 4 l8 -9"/></svg>
+        <h3>Accountability Check-ins</h3>
+        <p>Regular check-ins, habit reviews, and encouragement so your momentum keeps building between sessions.</p>
+      </div>
+    </div>
+    <div class="scope">
+      <b>A note on what coaching is.</b> &nbsp;As a certified wellness coach, I help you set goals, stay motivated, and build healthy habits through education and support. Coaching is not medical care, therapy, physical therapy, or medical nutrition therapy — I don't diagnose, treat, or prescribe. For anything medical, your physician is always the right partner.
+    </div>
+  </div>
+</section>
+
+<!-- RITUAL BAND -->
+<section class="ritual">
+  <div class="bgimg"></div>
+  <div class="scrim"></div>
+  <div class="frame"></div>
+  <div class="inner">
+    <div class="eyebrow">A Daily Practice</div>
+    <blockquote>"Small, beautiful rituals — practiced daily — become a lifetime of vitality."</blockquote>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Programs &amp; Pricing</div>
+      <h2>Choose your program length.</h2>
+      <p class="sub">Each program is a one-time purchase for the term you choose — no subscriptions, no automatic renewals. Prices are in U.S. dollars.</p>
+      <div class="toggle" id="toggle">
+        <button data-m="1" class="on">1 Month</button>
+        <button data-m="2">2 Months</button>
+        <button data-m="3">3 Months</button>
+      </div>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>The Essentials</h3>
+        <div class="sub">Coaching &amp; habits, one-on-one</div>
+        <div class="price"><span class="amt">$<span class="ess-amt">299</span></span><span class="per">/ <span class="term-len">1-month</span> program</span></div>
+        <div class="term-note">One-time payment · billed once at checkout</div>
+        <ul class="feat-list">
+          <li>One-on-one Certified Wellness Coaching</li>
+          <li>Nutrition habit guidance + protein &amp; fiber tracking</li>
+          <li>Weekly accountability &amp; habit check-ins</li>
+          <li>Personalized habit plan &amp; goal setting</li>
+          <li>Email support between sessions</li>
+        </ul>
+        <a class="btn btn-line" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Start The Essentials</a>
+        <div class="pay-note">Secure checkout powered by Stripe</div>
+      </div>
+
+      <div class="plan feat">
+        <span class="tag">Most Loved</span>
+        <h3>The Signature</h3>
+        <div class="sub">Coaching, movement &amp; habits, complete</div>
+        <div class="price"><span class="amt">$<span class="sig-amt">450</span></span><span class="per">/ <span class="term-len">1-month</span> program</span></div>
+        <div class="term-note">One-time payment · billed once at checkout</div>
+        <ul class="feat-list">
+          <li>Everything in The Essentials, plus:</li>
+          <li>Guided Pilates &amp; movement sessions (BASI Method)</li>
+          <li>Personalized movement-habit programming</li>
+          <li>Priority scheduling</li>
+          <li>Sessions in-studio or by arrangement</li>
+        </ul>
+        <a class="btn btn-primary" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Start The Signature</a>
+        <div class="pay-note">Secure checkout powered by Stripe</div>
+      </div>
+    </div>
+
+    <div class="addon-head"><span class="ln"></span><h3>Enhancements</h3><span class="ln"></span></div>
+    <p class="addon-note">Optional add-ons to tailor any program — confirmed together during your consult.</p>
+    <div class="addons">
+      <div class="addon"><div class="top"><h4>Extra Movement Session</h4><span class="ap">$85</span></div><p>An additional guided Pilates &amp; movement session, one-on-one.</p><div class="unit">Per session</div></div>
+      <div class="addon"><div class="top"><h4>Extra Coaching Call</h4><span class="ap">$75</span></div><p>A focused 45-minute coaching call to work through goals or roadblocks.</p><div class="unit">Per call</div></div>
+      <div class="addon"><div class="top"><h4>Habit + Journal Kit</h4><span class="ap">$45</span></div><p>A guided wellness journal and habit tracker to keep momentum at home.</p><div class="unit">One-time</div></div>
+      <div class="addon"><div class="top"><h4>Text Accountability</h4><span class="ap">$60</span></div><p>Weekly check-in messaging for extra encouragement and consistency.</p><div class="unit">Per month</div></div>
+      <div class="addon"><div class="top"><h4>Mindset Reset</h4><span class="ap">$95</span></div><p>A 60-minute deep-dive on mindset, motivation, and healthy lifestyle habits.</p><div class="unit">Per session</div></div>
+      <div class="addon"><div class="top"><h4>Add a Loved One</h4><span class="ap">$120</span></div><p>Bring a partner or friend into a shared movement session — wellness, together.</p><div class="unit">Per session</div></div>
+    </div>
+
+    <p style="text-align:center;color:var(--faint);font-size:.82rem;margin-top:38px;max-width:74ch;margin-left:auto;margin-right:auto;line-height:1.7;font-weight:300">
+      Session counts and scheduling are confirmed during your complimentary consult and may vary by program length. Programs are educational wellness-coaching and movement services and are not medical care. Please review our <a href="refund-policy.html" style="color:var(--clay);border-bottom:1px solid var(--clay)">Refund &amp; Cancellation Policy</a> before purchasing.
+    </p>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">How It Works</div><h2>Simple, from hello to habit.</h2></div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h4>Complimentary Consult</h4><p>We meet for a relaxed call to talk through your goals, lifestyle, and what's worked before.</p></div>
+      <div class="step"><div class="n">02</div><h4>Choose Your Program</h4><p>Pick the program and length that fits. You'll get a clear plan and a secure Stripe checkout.</p></div>
+      <div class="step"><div class="n">03</div><h4>Build Your Habits</h4><p>Begin coaching, movement, and nutrition habit support with guidance every step of the way.</p></div>
+      <div class="step"><div class="n">04</div><h4>Stay Accountable</h4><p>Regular check-ins keep you consistent, supported, and moving toward how you want to feel.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philo">
+  <div class="wrap">
+    <div class="mk">&ldquo;</div>
+    <blockquote>Longevity isn't about adding years — it's about filling them with <b>vitality</b>, strength, and ease.</blockquote>
+    <div class="by">Christina Lewis · Founder</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Good To Know</div><h2>Questions, answered.</h2></div>
+    <div class="faq-item"><button class="faq-q">How am I billed? <span class="pl"></span></button><div class="faq-a"><div>Every program is a one-time payment for the term you select (1, 2, or 3 months). There are no subscriptions and no automatic renewals — your card is charged once, securely, at checkout through Stripe. When your program ends, you simply choose whether to renew.</div></div></div>
+    <div class="faq-item"><button class="faq-q">How are sessions held? <span class="pl"></span></button><div class="faq-a"><div>Coaching and movement are one-on-one and by appointment. Guided Pilates &amp; movement in The Signature take place at the studio or another setting we arrange together. We'll confirm what works best for you during your consult.</div></div></div>
+    <div class="faq-item"><button class="faq-q">Is this medical, therapy, or a meal plan? <span class="pl"></span></button><div class="faq-a"><div>No. OS Wellness provides general wellness coaching, guided movement, and educational nutrition habit support. We do not diagnose, treat, or cure any condition, do not provide therapy or physical therapy, and do not write medical nutrition or meal plans. Our services are not a substitute for care from your physician or a licensed professional. Always consult your healthcare provider before starting any new exercise or nutrition routine.</div></div></div>
+    <div class="faq-item"><button class="faq-q">Can I add extra sessions or support? <span class="pl"></span></button><div class="faq-a"><div>Yes — see the Enhancements above. You can add extra movement sessions, coaching calls, text accountability, and more. We'll confirm any add-ons together during your consult so your program fits you.</div></div></div>
+    <div class="faq-item"><button class="faq-q">What's your refund policy? <span class="pl"></span></button><div class="faq-a"><div>You may cancel for a full refund within 3 days of purchase, provided no sessions have taken place. After services begin, refunds are handled on a prorated basis as described in our <a href="refund-policy.html" style="color:var(--clay);border-bottom:1px solid var(--clay)">Refund &amp; Cancellation Policy</a>.</div></div></div>
+    <div class="faq-item"><button class="faq-q">Do results vary? <span class="pl"></span></button><div class="faq-a"><div>Yes — individual results depend on many personal factors and are never guaranteed. We focus on consistent, sustainable habits rather than promises of specific outcomes.</div></div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">Begin</div>
+      <h2 style="font-size:clamp(2.2rem,4.6vw,3.4rem);margin-top:16px">Let's find your<br>starting point.</h2>
+      <p style="color:var(--soft);margin-top:18px;font-size:1.08rem;max-width:42ch;font-weight:300">Have a question or ready to begin? Book a complimentary consult or send a note — I'll get back to you personally.</p>
+      <div class="hero-cta" style="margin-top:30px">
+        <a class="btn btn-primary" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Book a Complimentary Consult</a>
+        <a class="link-arrow" href="mailto:hello@oswellness.app">Email us <span>→</span></a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <div class="row"><div class="lbl">Email</div><div class="val"><a href="mailto:hello@oswellness.app" style="color:var(--clay)">hello@oswellness.app</a></div></div>
+      <div class="row"><div class="lbl">Booking</div><div class="val"><a href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener" style="color:var(--clay)">Schedule a consult</a></div></div>
+      <div class="row"><div class="lbl">Hours</div><div class="val">By appointment · Monday–Saturday</div></div>
+      <div class="row"><div class="lbl">Mailing</div><div class="val">1325 Howard Ave, STE 439<br>Burlingame, CA 94010</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="fb">
+        <div class="os">OS Wellness</div>
+        <div class="nm">Organic Shimmer</div>
+        <p>One-on-one wellness coaching, guided movement, and nutrition habit support for women building vitality and healthy habits that last a lifetime.</p>
+        <p style="margin-top:16px;color:#3a5460;font-size:.82rem">hello@oswellness.app<br>1325 Howard Ave, STE 439 · Burlingame, CA 94010</p>
+      </div>
+      <div><h5>Explore</h5><a href="#about">About</a><a href="#approach">Approach</a><a href="#programs">Programs</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+      <div><h5>Legal</h5><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="refund-policy.html">Refund &amp; Cancellation</a><a href="mailto:hello@oswellness.app">Support</a></div>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Wellness Coaching Disclaimer.</strong> OS Wellness provides general wellness coaching, Pilates-based movement, and educational nutrition habit support for healthy adults. We are not licensed medical providers, physicians, registered dietitians, psychologists, or physical therapists. Our services do not diagnose, treat, cure, or prevent any disease or condition, do not constitute therapy or medical nutrition therapy, and are not a substitute for professional medical advice, diagnosis, or treatment. Always consult your physician or qualified healthcare provider before beginning any exercise, movement, or nutrition program, and stop any activity that causes pain or discomfort.</p>
+      <p><strong>Results Disclaimer.</strong> Individual results vary and are not guaranteed. Any outcomes depend on personal effort, consistency, health status, and other factors outside our control. &nbsp; <strong>Assumption of Risk.</strong> Physical activity carries inherent risks; by participating, clients voluntarily assume those risks and confirm they are medically cleared to exercise. &nbsp; <strong>Payments.</strong> Payments are processed securely by Stripe, Inc. OS Wellness does not store or have access to your full payment card details.</p>
+    </div>
+    <div class="foot-bottom">
+      <div>© <span id="yr"></span> OS Wellness · Organic Shimmer Tanning + Wellness. All rights reserved.</div>
+      <div>Secured by Stripe · VISA · Mastercard · AMEX · Discover</div>
+    </div>
+  </div>
+  <div class="meadow"></div>
+</footer>
+
+<script>
+  var PRICES={ess:{1:299,2:575,3:799},sig:{1:450,2:825,3:1200}};
+  var TERMS={1:'1-month',2:'2-month',3:'3-month'};
+  var toggle=document.getElementById('toggle');
+  toggle.addEventListener('click',function(e){
+    if(e.target.tagName!=='BUTTON')return;
+    [].forEach.call(toggle.children,function(b){b.classList.remove('on')});
+    e.target.classList.add('on');
+    var m=e.target.getAttribute('data-m');
+    document.querySelector('.ess-amt').textContent=PRICES.ess[m];
+    document.querySelector('.sig-amt').textContent=PRICES.sig[m];
+    [].forEach.call(document.querySelectorAll('.term-len'),function(el){el.textContent=TERMS[m]});
+  });
+  [].forEach.call(document.querySelectorAll('.faq-q'),function(q){
+    q.addEventListener('click',function(){
+      var a=q.nextElementSibling,open=q.classList.contains('open');
+      q.classList.toggle('open');
+      a.style.maxHeight=open?null:a.scrollHeight+'px';
+    });
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
