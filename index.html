@@ -323,7 +323,7 @@
         <svg class="ic" viewBox="0 0 32 32" fill="none" stroke="#BE7669" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="12"/><path d="M10 16 l4 4 l8 -9"/></svg>
         <h3>Accountability Check-ins</h3><p>Regular check-ins, habit reviews, and encouragement so your momentum keeps building between sessions.</p></div>
     </div>
-    <div class="scope"><b>A note on what coaching is.</b> &nbsp;As a certified wellness coach, I help you set goals, stay motivated, and build healthy habits through education and support. Coaching is not medical care, therapy, physical therapy, or medical nutrition therapy — I don't diagnose, treat, or prescribe. For anything medical, your physician is always the right partner.</div>
+    <div class="scope"><b>A note on what coaching is.</b> &nbsp;As a certified wellness coach, I help you set goals, stay motivated, and build healthy habits through education and support. Coaching is not medical care, therapy, physical therapy, or medical nutrition therapy — I don't diagnose, treat, or prescribe, and I don't sell or provide any products, supplements, or medications. For anything medical, your physician is always the right partner.</div>
   </div>
 </section>
 
@@ -359,7 +359,7 @@
         <div class="price"><span class="amt">$<span class="ess-amt">299</span></span><span class="per">/ <span class="term-len">1-month</span> program</span></div>
         <div class="term-note">One-time payment · billed once at checkout</div>
         <ul class="feat-list"><li>One-on-one Certified Wellness Coaching</li><li>Nutrition habit guidance + protein &amp; fiber tracking</li><li>Weekly accountability &amp; habit check-ins</li><li>Personalized habit plan &amp; goal setting</li><li>Email support between sessions</li></ul>
-        <a class="btn btn-line" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Start The Essentials</a>
+        <a class="btn btn-line" id="ess-btn" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Start The Essentials</a>
         <div class="pay-note">Secure checkout powered by Stripe</div>
       </div>
       <div class="plan feat">
@@ -367,7 +367,7 @@
         <div class="price"><span class="amt">$<span class="sig-amt">450</span></span><span class="per">/ <span class="term-len">1-month</span> program</span></div>
         <div class="term-note">One-time payment · billed once at checkout</div>
         <ul class="feat-list"><li>Everything in The Essentials, plus:</li><li>Guided Pilates &amp; movement sessions (BASI Method)</li><li>Personalized movement-habit programming</li><li>Priority scheduling</li><li>Sessions in-studio or by arrangement</li></ul>
-        <a class="btn btn-primary" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Start The Signature</a>
+        <a class="btn btn-primary" id="sig-btn" href="https://calendly.com/hello-wellpep/new-meeting" target="_blank" rel="noopener">Start The Signature</a>
         <div class="pay-note">Secure checkout powered by Stripe</div>
       </div>
     </div>
@@ -455,7 +455,8 @@
     </div>
     <div class="disclaimer">
       <p><strong>Wellness Coaching Disclaimer.</strong> OS Wellness provides general wellness coaching, Pilates-based movement, and educational nutrition habit support for healthy adults. We are not licensed medical providers, physicians, registered dietitians, psychologists, or physical therapists. Our services do not diagnose, treat, cure, or prevent any disease or condition, do not constitute therapy or medical nutrition therapy, and are not a substitute for professional medical advice, diagnosis, or treatment. Always consult your physician or qualified healthcare provider before beginning any exercise, movement, or nutrition program, and stop any activity that causes pain or discomfort.</p>
-      <p><strong>Results Disclaimer.</strong> Individual results vary and are not guaranteed. Any outcomes depend on personal effort, consistency, health status, and other factors outside our control. &nbsp; <strong>Assumption of Risk.</strong> Physical activity carries inherent risks; by participating, clients voluntarily assume those risks and confirm they are medically cleared to exercise. &nbsp; <strong>Payments.</strong> Payments are processed securely by Stripe, Inc. OS Wellness does not store or have access to your full payment card details.</p>
+      <p><strong>No Medical Products or Goods.</strong> OS Wellness sells only educational coaching and movement <strong>services</strong>. We do not sell, distribute, manufacture, compound, prescribe, dispense, administer, ship, or provide any products of any kind — including pharmaceuticals, prescription or over-the-counter drugs, supplements, vitamins, hormones, peptides, injectables, medical devices, or any controlled or regulated substance. No purchase on this site includes any such product, and any reference to nutrition is strictly educational.</p>
+      <p><strong>Results Disclaimer.</strong> Individual results vary and are not guaranteed. Any outcomes depend on personal effort, consistency, health status, and other factors outside our control. &nbsp; <strong>Assumption of Risk &amp; Release.</strong> Physical activity carries inherent risks; by participating, clients voluntarily assume those risks, confirm they are medically cleared to exercise, and release OS Wellness and Organic Shimmer from liability to the fullest extent permitted by law. &nbsp; <strong>Limitation of Liability.</strong> To the maximum extent permitted by law, OS Wellness's total liability arising from the services is limited to the amount you paid for the applicable program. &nbsp; <strong>Payments.</strong> Payments are processed securely by Stripe, Inc. OS Wellness does not store or have access to your full payment card details. Full <a href="terms.html" style="color:#13202a;text-decoration:underline">Terms</a>, <a href="privacy.html" style="color:#13202a;text-decoration:underline">Privacy Policy</a>, and <a href="refund-policy.html" style="color:#13202a;text-decoration:underline">Refund Policy</a> apply.</p>
     </div>
     <div class="foot-bottom"><div>© <span id="yr"></span> OS Wellness · Organic Shimmer Tanning + Wellness. All rights reserved.</div><div>Secured by Stripe · VISA · Mastercard · AMEX · Discover</div></div>
   </div>
@@ -465,8 +466,29 @@
 <script>
   var PRICES={ess:{1:299,2:575,3:799},sig:{1:450,2:825,3:1200}};
   var TERMS={1:'1-month',2:'2-month',3:'3-month'};
+
+  /* === STRIPE PAYMENT LINKS ===
+     After Stripe approves you, create 6 Payment Links (one-time payments) and paste the
+     URLs below — they look like https://buy.stripe.com/xxxxxxxx
+     Leave any blank and that button safely falls back to the consult link. */
+  var CONSULT='https://calendly.com/hello-wellpep/new-meeting';
+  var PAYLINKS={
+    ess:{ 1:'',   /* The Essentials · 1 Month · $299 */
+          2:'',   /* The Essentials · 2 Months · $575 */
+          3:'' }, /* The Essentials · 3 Months · $799 */
+    sig:{ 1:'',   /* The Signature · 1 Month · $450 */
+          2:'',   /* The Signature · 2 Months · $825 */
+          3:'' }  /* The Signature · 3 Months · $1200 */
+  };
+  function applyLinks(m){
+    var e=document.getElementById('ess-btn'), s=document.getElementById('sig-btn');
+    e.setAttribute('href', PAYLINKS.ess[m] || CONSULT);
+    s.setAttribute('href', PAYLINKS.sig[m] || CONSULT);
+  }
+
   var toggle=document.getElementById('toggle');
-  toggle.addEventListener('click',function(e){if(e.target.tagName!=='BUTTON')return;[].forEach.call(toggle.children,function(b){b.classList.remove('on')});e.target.classList.add('on');var m=e.target.getAttribute('data-m');document.querySelector('.ess-amt').textContent=PRICES.ess[m];document.querySelector('.sig-amt').textContent=PRICES.sig[m];[].forEach.call(document.querySelectorAll('.term-len'),function(el){el.textContent=TERMS[m]});});
+  toggle.addEventListener('click',function(e){if(e.target.tagName!=='BUTTON')return;[].forEach.call(toggle.children,function(b){b.classList.remove('on')});e.target.classList.add('on');var m=e.target.getAttribute('data-m');document.querySelector('.ess-amt').textContent=PRICES.ess[m];document.querySelector('.sig-amt').textContent=PRICES.sig[m];[].forEach.call(document.querySelectorAll('.term-len'),function(el){el.textContent=TERMS[m]});applyLinks(m);});
+  applyLinks(1);
   [].forEach.call(document.querySelectorAll('.faq-q'),function(q){q.addEventListener('click',function(){var a=q.nextElementSibling,open=q.classList.contains('open');q.classList.toggle('open');a.style.maxHeight=open?null:a.scrollHeight+'px';});});
   document.getElementById('yr').textContent=new Date().getFullYear();
 </script>
