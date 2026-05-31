@@ -79,10 +79,10 @@
 
   /* VALUE BAND (slow marquee) */
   .values{background:var(--bg-2);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);overflow:hidden;padding:24px 0}
-  .values .track{display:flex;align-items:center;gap:36px;width:max-content;animation:vmarquee 100s linear infinite}
+  .values .track{display:flex;align-items:center;gap:36px;width:max-content;animation:vmarquee 120s linear infinite}
   .values .track span{font-family:'Playfair Display';font-style:italic;font-size:1.3rem;color:var(--ink);white-space:nowrap}
   .values .track .dia{width:6px;height:6px;background:var(--pink);transform:rotate(45deg);flex:none}
-  @keyframes vmarquee{to{transform:translateX(-50%)}}
+  @keyframes vmarquee{to{transform:translateX(-33.3333%)}}
   @media(max-width:640px){.values .track span{font-size:1.12rem}.values .track{gap:28px}}
 
   section{padding:124px 0}
@@ -284,9 +284,10 @@
 
 <!-- VALUE BAND -->
 <div class="values">
-  <div class="track">
-    <span>Strength</span><i class="dia"></i><span>Balance</span><i class="dia"></i><span>Radiance</span><i class="dia"></i><span>Movement</span><i class="dia"></i><span>Wellbeing</span><i class="dia"></i>
-    <span>Strength</span><i class="dia"></i><span>Balance</span><i class="dia"></i><span>Radiance</span><i class="dia"></i><span>Movement</span><i class="dia"></i><span>Wellbeing</span><i class="dia"></i>
+  <div class="track" aria-hidden="true">
+    <span>Strength</span><i class="dia"></i><span>Balance</span><i class="dia"></i><span>Radiance</span><i class="dia"></i><span>Movement</span><i class="dia"></i><span>Wellbeing</span><i class="dia"></i><span>Energy</span><i class="dia"></i><span>Confidence</span><i class="dia"></i><span>Grace</span><i class="dia"></i><span>Stillness</span><i class="dia"></i><span>Mobility</span><i class="dia"></i><span>Nourishment</span><i class="dia"></i><span>Ease</span><i class="dia"></i><span>Resilience</span><i class="dia"></i><span>Calm</span><i class="dia"></i><span>Presence</span><i class="dia"></i><span>Flow</span><i class="dia"></i>
+    <span>Strength</span><i class="dia"></i><span>Balance</span><i class="dia"></i><span>Radiance</span><i class="dia"></i><span>Movement</span><i class="dia"></i><span>Wellbeing</span><i class="dia"></i><span>Energy</span><i class="dia"></i><span>Confidence</span><i class="dia"></i><span>Grace</span><i class="dia"></i><span>Stillness</span><i class="dia"></i><span>Mobility</span><i class="dia"></i><span>Nourishment</span><i class="dia"></i><span>Ease</span><i class="dia"></i><span>Resilience</span><i class="dia"></i><span>Calm</span><i class="dia"></i><span>Presence</span><i class="dia"></i><span>Flow</span><i class="dia"></i>
+    <span>Strength</span><i class="dia"></i><span>Balance</span><i class="dia"></i><span>Radiance</span><i class="dia"></i><span>Movement</span><i class="dia"></i><span>Wellbeing</span><i class="dia"></i><span>Energy</span><i class="dia"></i><span>Confidence</span><i class="dia"></i><span>Grace</span><i class="dia"></i><span>Stillness</span><i class="dia"></i><span>Mobility</span><i class="dia"></i><span>Nourishment</span><i class="dia"></i><span>Ease</span><i class="dia"></i><span>Resilience</span><i class="dia"></i><span>Calm</span><i class="dia"></i><span>Presence</span><i class="dia"></i><span>Flow</span><i class="dia"></i>
   </div>
 </div>
 
