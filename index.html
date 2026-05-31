@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>OS Wellness — Wellness Coaching for Longevity & Vitality</title>
 <meta name="description" content="OS Wellness offers one-on-one wellness coaching, guided movement, and nutrition habit support to help women build vitality, strength, and healthy habits for a long, radiant life." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="shortcut icon" href="favicon.ico">
+<meta name="theme-color" content="#46283A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -42,7 +48,8 @@
   /* HEADER */
   header{position:sticky;top:0;z-index:100;backdrop-filter:blur(14px);background:rgba(247,240,232,.78);border-bottom:1px solid var(--line-2)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:84px}
-  .brand{display:flex;align-items:center;gap:14px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand .emb{width:38px;height:38px;flex:none}
   .brand .os{font-family:'Playfair Display';font-size:1.8rem;font-weight:600;letter-spacing:.05em}
   .brand .div{width:1px;height:26px;background:var(--gold);opacity:.7}
   .brand .nm{font-size:.66rem;letter-spacing:.44em;text-transform:uppercase;color:var(--soft);font-weight:600}
@@ -237,7 +244,7 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top"><span class="os">OS</span><span class="div"></span><span class="nm">Wellness</span></a>
+    <a class="brand" href="#top"><svg class="emb" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49" fill="#46283A"/><circle cx="50" cy="50" r="45.5" fill="none" stroke="#BF9F63" stroke-width="0.8" opacity="0.85"/><g fill="#E0C892"><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(-50 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(50 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(-25 50 60)"/><path d="M50 60 C 43 51, 45 39, 50 36 C 55 39, 57 51, 50 60 Z" transform="rotate(25 50 60)"/></g><circle cx="50" cy="58" r="4.2" fill="#BE7669"/><path d="M50 60 V74" stroke="#BF9F63" stroke-width="1.6" stroke-linecap="round"/><path d="M50 67 C 45 66, 42 62, 41 59 M50 67 C 55 66, 58 62, 59 59" stroke="#BF9F63" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg><span class="os">OS</span><span class="div"></span><span class="nm">Wellness</span></a>
     <nav class="navlinks">
       <a href="#about">About</a><a href="#approach">Approach</a><a href="#programs">Programs</a><a href="#how">Journey</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
       <a class="btn btn-primary" href="#programs">Get Started</a>
